@@ -1,0 +1,48 @@
+                                   LOC	#600000000
+                   
+0000000600000000:  Traphandler 	PUSHJ	255,1F
+ ...000: f2ffxxxx
+ ...004: f60400ff  		PUT	rJ,$255
+ ...008: e3ff0000          	SETL	$255,0
+ ...00c: f9000001  		RESUME	1
+                   
+ ...010: e200e300  Main	   	SETML	$0,#e300
+ ...014: e1010006                  SETMH	$1,6
+ ...018: ab000108                  STTU	$0,$1,8
+ ...01c: e1ff0006                  SETMH	$255,6
+ ...020: f60d00ff          	PUT	rT,$255
+ ...024: e3fe06c1          	SETL	$254,1729
+ ...028: e3fd0013          	SETL	$253,19
+ ...02c: 1efffefd          	DIVU	$255,$254,$253
+ ...030: e7ff1234                  INCL	$255,#1234
+ ...034: 00000000          	TRAP	0,0,0
+                   
+                   
+ ...038: fe00001d  1H		GET	$0,rXX
+ ...03c: 3f010038          	SRU	$1,$0,56
+ ...040: 31010102          	CMP	$1,$1,#02
+ ...044: 4a01xxxx                  BNZ	$1,2F
+                   
+ ...048: 3f000018                  SRU	$0,$0,24
+ ...04c: c90100fc                  AND	$1,$0,#FC
+ ...050: 3101011c                  CMP	$1,$1,#1C
+ ...054: 4201xxxx                  BZ	$1,3F
+                   
+                   % Unknown trap
+ ...058: f8000000  		POP	0,0
+                   
+                   % Ordinary trap ("system call") handling
+ ...05c: fd000000  2H		SWYM
+ ...060: f8000000          	POP	0,0
+                   
+                   
+                   % Div[u][i] emulation
+ ...064: fe00001e  3H		GET	$0,rYY
+ ...068: fe01001f          	GET	$1,rZZ
+ ...06c: 20000001          	ADD	$0,$0,$1   % This should be division emulation but ...
+ ...070: f61f0000          	PUT	rZZ,$0
+ ...074: f8000000          	POP	0,0
+
+Symbol table:
+ Main = #0000000600000010 (1)
+ Traphandler = #0000000600000000 (2)

@@ -1,0 +1,74 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		main_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F484C8
+set_global_assignment -name TOP_LEVEL_ENTITY fpgammix
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:44:06  AUGUST 27, 2006"
+set_global_assignment -name LAST_QUARTUS_VERSION 6.0
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+
+
+# Pin & Location Assignments
+# ==========================
+
+# The board labels these 0 .. 7, but I like the
+# lower order bit on the left, thank you!
+
+
+
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_GATE_RETIME ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
+set_global_assignment -name ENABLE_DRC_SETTINGS ON
+set_global_assignment -name IGNORE_CLOCK_SETTINGS ON
+set_global_assignment -name FMAX_REQUIREMENT "500 MHz"
+
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name VERILOG_FILE src/fpgammix.v
+set_global_assignment -name VERILOG_FILE ../core.v
+set_global_assignment -name VERILOG_FILE ../system.v
+set_global_assignment -name VERILOG_FILE ../interconnect.v
+set_global_assignment -name VERILOG_FILE ../memory_interface.v
+set_global_assignment -name VERILOG_FILE ../vga.v
+set_global_assignment -name VERILOG_FILE ../rs232in.v
+set_global_assignment -name VERILOG_FILE ../rs232out.v
+set_global_assignment -name VERILOG_FILE ../filter.v
+set_global_assignment -name VERILOG_FILE mega/regfile.v
+set_global_assignment -name VERILOG_FILE mega/pll1.v
+set_global_assignment -name MIF_FILE ../initmem.mif
+set_global_assignment -name MIF_FILE ../info_flags.mif
+set_global_assignment -name CDF_FILE fpgammix.cdf
+
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8

@@ -1,0 +1,159 @@
+I've rejected WISHBONE as being too low performance.  Altera's Avalon
+represents the golden standard for me, but it's _very_ general and
+would take much effort to replicate.
+
+For my needs I only need:
+- all reads are pipelined with variable latency
+- multi master support
+- burst support
+
+
+Basics
+~~~~~~
+
+Master raises transfer_request to initial a transfer.  Slave
+asynchronously raises wait_request when it's not ready.  The master is
+expected to hold the request and associated parameters stable until
+wait goes down.
+
+Example, a master side state machine issuing two requests (no bust)
+will look like:
+
+  always @(posedge clock) case (state)
+  S1: begin
+    ... <parameters> ... <= .... params for 1st req ....
+    transfer_request     <= 1;
+    state <= S2;
+  end
+
+  S2: if (~wait_request) begin
+    ... <parameters> ... <= .... params for 1st req ....
+    state <= S3;
+  end
+
+  S3: if (~wait_request) begin
+    transfer_request <= 0;
+    ....
+  end
+
+
+Pipelined Reading
+~~~~~~~~~~~~~~~~~
+
+Read requests are just like write requests, except that one or more
+cycles in the future replies will arrive, in the order issued, raising
+data_valid for one cycle for each reply.
+
+Extending the above example, we need a separate state machine
+collecting the data as we can't assume anything about how long we will
+have to wait in S2.
+
+  always @(posedge clock) begin
+    if (data_valid)
+      if (waiting_for_1st) begin
+        first <= port_read_data;
+        waiting_for_1st <= 0;
+      end else begin
+        second <= port_read_data;
+        waiting_for_2nd <= 0;
+      end
+
+    case (state)
+    S1: begin
+      ... <parameters> ... <= .... params for 1st req ....
+      transfer_request     <= 1;
+      waiting_for_1st      <= 1;
+      state <= S2;
+    end
+
+    S2: if (~wait_request) begin
+      ... <parameters> ... <= .... params for 2nd req ....
+      waiting_for_2nd      <= 1;
+      state <= S3;
+    end
+
+    S3: if (~wait_request) begin
+      transfer_request <= 0;
+      state <= S4;
+    end
+
+    S4: if (~waiting_for_1st & ~waiting_for_2nd) begin
+      ... process data
+    end
+  end
+
+
+In many cases burst transfers can replace the need for multiple
+issues.
+
+
+Multi Master
+~~~~~~~~~~~~
+
+I really like the shared based approach to arbitration that Avalon
+has.  Let's see if we can replicate it.
+
+  Constants
+    A_SHARES, B_SHARES
+
+  if (transfer_request_a & (shares_left_for_a | ~transfer_request_b))
+     go ahead and let A get access
+     if (shares_left_for_a == 0)
+        shares_left_for_a = A_SHARES
+     else
+        --shares_left_for_a
+  else if (transfer_request_b & (shares_left_for_b | ~transfer_request_a))
+     go ahead and let B get access
+     if (shares_left_for_b == 0)
+        shares_left_for_b = A_SHARES
+     else
+        --shares_left_for_b
+  else /* ~transfer_request_a & ~transfer_request_b */
+     shares_left_for_a = A_SHARES
+     shares_left_for_b = A_SHARES
+     do nothing else
+
+Puh, not tooo complicated?  Just wait until we throw burst support into the mix.
+
+Also, I failed to show how to support routing the read data back to
+theirs masters.  A simple 1-bit FIFO of length A_SHARES + B_SHARES
+(??)  should be sufficient.  (Careful about the latency of the FIFO
+itself.)  However, the arbitration must know which requests will
+result in a reply.  (Should simply all requests result in a reply to
+simplify?)
+
+
+Burst support
+~~~~~~~~~~~~~
+
+I haven't found documentation for how Avalon handles this, but it
+seems that simply extending the basic strategy with a burst count
+should suffice.
+
+Example: lets show the client side for a change (as the master looks
+almost exactly the same as for a single request).  This simple client
+can only handle one outstanding request at a time, but it does support
+bursts.
+
+  wire wait_request = count != 0;
+
+  always @(posedge clock) begin
+    pipeline[N:1] <= pipeline[N-1:0];
+    pipeline[0] <= 0;
+    if (count) begin
+      addr <= addr + 1;
+      pipeline[0] <= 1;
+      count <= count - 1;
+    else if (transfer_request) begin
+           count <= burst_length;
+           addr <= request_addr
+    end
+  end
+
+(Of course the counting down to -1 and using the sign bit would be
+better).
+
+
+The only extension needed for the arbitration is knowing about the
+burst size.
+

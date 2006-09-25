@@ -1,0 +1,125 @@
+
+;; Function t (t)
+
+(note 2 0 5 NOTE_INSN_DELETED)
+
+(note 5 2 37 [bb 0] NOTE_INSN_BASIC_BLOCK)
+
+(insn/f 37 5 38 (set (reg/f:DI 254 $254)
+        (plus:DI (reg/f:DI 254 $254)
+            (const_int -8 [0xfffffffffffffff8]))) -1 (nil)
+    (nil))
+
+(insn/f 38 37 39 (set (mem:DI (reg/f:DI 254 $254) [0 S8 A64])
+        (reg/f:DI 253 $253)) -1 (nil)
+    (nil))
+
+(insn/f 39 38 40 (set (reg/f:DI 253 $253)
+        (plus:DI (reg/f:DI 254 $254)
+            (const_int 8 [0x8]))) -1 (nil)
+    (nil))
+
+(note 40 39 33 NOTE_INSN_PROLOGUE_END)
+
+(insn 33 40 3 (set (reg:DI 3 $3 [274])
+        (reg:DI 259 rJ)) 3 {movdi} (nil)
+    (nil))
+
+(note 3 33 8 NOTE_INSN_FUNCTION_BEG)
+
+(insn 8 3 9 (set (reg:DI 2 $2 [orig:271 D.1867 ] [271])
+        (mem/s/j:DI (const:DI (plus:DI (symbol_ref:DI ("h") <var_decl 0x2aaaaaf4ddc0 h>)
+                    (const_int 24 [0x18]))) [0 h+24 S8 A64])) 3 {movdi} (nil)
+    (nil))
+
+(insn 9 8 10 (set (reg:DI 1 $1 [orig:270 D.1868 ] [270])
+        (mem/s/j:DI (const:DI (plus:DI (symbol_ref:DI ("h") <var_decl 0x2aaaaaf4ddc0 h>)
+                    (const_int 24 [0x18]))) [0 h+24 S8 A64])) 3 {movdi} (nil)
+    (nil))
+
+(insn 10 9 35 (set (reg:DI 0 $0 [273])
+        (const_int 3000 [0xbb8])) 3 {movdi} (nil)
+    (nil))
+
+(insn 35 10 36 (set (reg:DI 4 $4)
+        (reg:DI 1 $1 [orig:270 D.1868 ] [270])) 3 {movdi} (nil)
+    (nil))
+
+(insn 36 35 11 (set (reg:DI 5 $5)
+        (reg:DI 0 $0 [273])) 3 {movdi} (nil)
+    (nil))
+
+(insn 11 36 12 (parallel [
+            (set (reg:DI 0 $0 [orig:269 D.1869 ] [269])
+                (div:DI (reg:DI 4 $4)
+                    (reg:DI 5 $5)))
+            (clobber (reg:DI 4 $4))
+            (clobber (reg:DI 5 $5))
+            (clobber (reg:DI 260 rR))
+        ]) 20 {*divdi3_nonknuth} (nil)
+    (nil))
+
+(insn 12 11 13 (set (reg:DI 0 $0 [orig:268 D.1870 ] [268])
+        (minus:DI (reg:DI 2 $2 [orig:271 D.1867 ] [271])
+            (reg:DI 0 $0 [orig:269 D.1869 ] [269]))) 9 {subdi3} (nil)
+    (nil))
+
+(insn 13 12 15 (set (mem/s/j:DI (const:DI (plus:DI (symbol_ref:DI ("h") <var_decl 0x2aaaaaf4ddc0 h>)
+                    (const_int 24 [0x18]))) [0 h+24 S8 A64])
+        (reg:DI 0 $0 [orig:268 D.1870 ] [268])) 3 {movdi} (nil)
+    (nil))
+
+(insn 15 13 16 (set (reg:DI 16 $16)
+        (const_int 0 [0x0])) 3 {movdi} (nil)
+    (nil))
+
+(insn 16 15 17 (set (reg:DI 17 $17)
+        (symbol_ref:DI ("h") <var_decl 0x2aaaaaf4ddc0 h>)) 3 {movdi} (nil)
+    (nil))
+
+(insn 17 16 18 (set (reg:DI 18 $18)
+        (const_int 0 [0x0])) 3 {movdi} (nil)
+    (nil))
+
+(call_insn 18 17 19 (parallel [
+            (set (reg:SI 15 $15)
+                (call (mem:QI (symbol_ref/v:DI ("setitimer") <function_decl 0x2aaaaaf4ea00 setitimer>) [0 S1 A8])
+                    (const_int 0 [0x0])))
+            (use (reg 19 $19))
+            (clobber (reg:DI 259 rJ))
+        ]) 56 {*call_value_real} (nil)
+    (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 18 $18))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 17 $17))
+            (expr_list:REG_DEP_TRUE (use (reg:DI 16 $16))
+                (nil)))))
+
+(insn 19 18 20 (set (reg:DI 259 rJ)
+        (reg:DI 3 $3 [274])) 3 {movdi} (nil)
+    (nil))
+
+(note 20 19 24 NOTE_INSN_FUNCTION_END)
+
+(insn 24 20 29 (clobber (reg/i:SI 0 $0)) -1 (nil)
+    (nil))
+
+(insn 29 24 41 (use (reg/i:SI 0 $0)) -1 (nil)
+    (nil))
+
+(note 41 29 42 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 42 41 43 (set (reg/f:DI 253 $253)
+        (mem:DI (reg/f:DI 254 $254) [0 S8 A64])) -1 (nil)
+    (nil))
+
+(insn 43 42 44 (set (reg/f:DI 254 $254)
+        (plus:DI (reg/f:DI 254 $254)
+            (const_int 8 [0x8]))) -1 (nil)
+    (nil))
+
+(jump_insn 44 43 45 (return) -1 (nil)
+    (nil))
+
+(barrier 45 44 34)
+
+(note 34 45 0 NOTE_INSN_DELETED)

@@ -1,0 +1,55 @@
+
+                          FpgaMMIX Computer
+
+                         Phase 1: microcoded
+
+                             Version 0.0
+
+                    Copyright (C) 2006 Tommy Thorn
+
+  This is the first hardware implementation of Professor Knuth's MMIX
+  architecture. More than just the CPU core, this is a full computer
+  with an assortment of peripherals.
+
+  The present version is a micro-sequenced implementation which
+  primary purpose is an experiment to verify my understanding of the
+  architecture, a tool for learning, and a vehicle for building the
+  infrastructure (notably software) for the higher performance version
+  to follow.
+
+  Performance specifically been a *non-goal* for this implementation,
+  as long as it was sufficient fast for the purpose mentioned above
+  and small enough to fit my development FPGA (Altera Cyclone
+  EP1C20). For practical reasons FpgaMMIX, as of this writing, runs
+  with a clock frequency of 25 MHz and takes at least 10 cycles per
+  instruction.
+
+  Performance goal for the pipelined implementation (FpgaMMIX v1) is
+  one cycle execution for most instructions and a frequency in the
+  range of 100 to 200 MHz on the same hardware, thus 40-80X faster.
+
+CONFORMANCE
+
+  Any deviation from the specification given by Knuth should be
+  considered a bug (please report), unless explicitly stated. The TLB
+  is likely to implement only a subset of the specification.
+
+  The current implementation is fast approaching Milestone 1, that is
+  full RTL implementation of the integer subset. DIV[U] and all
+  floating point instructions will be emulated by the firmware. The
+  extend of hardware floating point support is TBD, particularly
+  depending on available logic resources. FpgaMMIX v1 is expected to
+  get basic hardware support for floating point arithmetic.
+
+
+
+ACKNOWLEDGMENT
+
+  Big thanks to H. Peter Anvin for showing how to interface much of
+  the peripherals on the Nios Development Kit, Cyclone Ed. as well as
+  the Lancelot daughter card.
+
+
+TASKS
+
+- Porting to cheaper or more capable platforms.  

@@ -1,0 +1,344 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		main_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name DEVICE EP1C20F400C7
+set_global_assignment -name TOP_LEVEL_ENTITY fpgammix
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:55:16  MAY 16, 2006"
+set_global_assignment -name LAST_QUARTUS_VERSION 6.0
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name FITTER_EFFORT "FAST FIT"
+
+
+# Pin & Location Assignments
+# ==========================
+set_location_assignment PIN_W9 -to audio_l
+set_location_assignment PIN_U10 -to audio_r
+set_location_assignment PIN_H17 -to cf_a[0]
+set_location_assignment PIN_J15 -to cf_a[10]
+set_location_assignment PIN_H18 -to cf_a[1]
+set_location_assignment PIN_H19 -to cf_a[2]
+set_location_assignment PIN_W18 -to cf_a[3]
+set_location_assignment PIN_K15 -to cf_a[4]
+set_location_assignment PIN_J18 -to cf_a[5]
+set_location_assignment PIN_J17 -to cf_a[6]
+set_location_assignment PIN_J14 -to cf_a[7]
+set_location_assignment PIN_H14 -to cf_a[8]
+set_location_assignment PIN_J20 -to cf_a[9]
+set_location_assignment PIN_J19 -to cf_bvd1
+set_location_assignment PIN_J16 -to cf_bvd2
+set_location_assignment PIN_B13 -to cf_cd1_n
+set_location_assignment PIN_H20 -to cf_ce1_n
+set_location_assignment PIN_U19 -to cf_ce2_n
+set_location_assignment PIN_F20 -to cf_d[0]
+set_location_assignment PIN_D20 -to cf_d[10]
+set_location_assignment PIN_F17 -to cf_d[11]
+set_location_assignment PIN_E18 -to cf_d[12]
+set_location_assignment PIN_F16 -to cf_d[13]
+set_location_assignment PIN_F19 -to cf_d[14]
+set_location_assignment PIN_G16 -to cf_d[15]
+set_location_assignment PIN_F15 -to cf_d[1]
+set_location_assignment PIN_E19 -to cf_d[2]
+set_location_assignment PIN_F18 -to cf_d[3]
+set_location_assignment PIN_E17 -to cf_d[4]
+set_location_assignment PIN_D17 -to cf_d[5]
+set_location_assignment PIN_D18 -to cf_d[6]
+set_location_assignment PIN_C18 -to cf_d[7]
+set_location_assignment PIN_C19 -to cf_d[8]
+set_location_assignment PIN_D19 -to cf_d[9]
+set_location_assignment PIN_V19 -to cf_inpack_n
+set_location_assignment PIN_G19 -to cf_iord_n
+set_location_assignment PIN_G20 -to cf_iowr_n
+set_location_assignment PIN_D13 -to cf_oe_n
+set_location_assignment PIN_G17 -to cf_rdy
+set_location_assignment PIN_U20 -to cf_reg_n
+set_location_assignment PIN_G14 -to cf_wait_n
+set_location_assignment PIN_V18 -to cf_we_n
+set_location_assignment PIN_H16 -to cf_wp
+set_location_assignment PIN_K5 -to clkin
+set_location_assignment PIN_A14 -to enet_ads_n
+set_location_assignment PIN_B15 -to enet_aen
+set_location_assignment PIN_C16 -to enet_be_n[0]
+set_location_assignment PIN_B16 -to enet_be_n[1]
+set_location_assignment PIN_D16 -to enet_be_n[2]
+set_location_assignment PIN_E16 -to enet_be_n[3]
+set_location_assignment PIN_B17 -to enet_cycle_n
+set_location_assignment PIN_C15 -to enet_datacs_n
+set_location_assignment PIN_D15 -to enet_intrq0
+set_location_assignment PIN_F14 -to enet_iochrdy
+set_location_assignment PIN_A15 -to enet_ior_n
+set_location_assignment PIN_E15 -to enet_iow_n
+set_location_assignment PIN_C17 -to enet_lclk
+set_location_assignment PIN_D3 -to enet_ldev_n
+set_location_assignment PIN_B18 -to enet_rdyrtn_n
+set_location_assignment PIN_A17 -to enet_w_r_n
+set_location_assignment PIN_A12 -to flash_cs_n
+set_location_assignment PIN_B12 -to flash_oe_n
+set_location_assignment PIN_D12 -to flash_rw_n
+set_location_assignment PIN_C12 -to flash_ry_by_n
+set_location_assignment PIN_B4 -to fse_a[0]
+set_location_assignment PIN_E4 -to fse_a[10]
+set_location_assignment PIN_E5 -to fse_a[11]
+set_location_assignment PIN_F3 -to fse_a[12]
+set_location_assignment PIN_E3 -to fse_a[13]
+set_location_assignment PIN_E2 -to fse_a[14]
+set_location_assignment PIN_F4 -to fse_a[15]
+set_location_assignment PIN_F5 -to fse_a[16]
+set_location_assignment PIN_F2 -to fse_a[17]
+set_location_assignment PIN_F1 -to fse_a[18]
+set_location_assignment PIN_F6 -to fse_a[19]
+set_location_assignment PIN_A4 -to fse_a[1]
+set_location_assignment PIN_G5 -to fse_a[20]
+set_location_assignment PIN_G1 -to fse_a[21]
+set_location_assignment PIN_G2 -to fse_a[22]
+set_location_assignment PIN_D5 -to fse_a[2]
+set_location_assignment PIN_D6 -to fse_a[3]
+set_location_assignment PIN_C5 -to fse_a[4]
+set_location_assignment PIN_B5 -to fse_a[5]
+set_location_assignment PIN_C2 -to fse_a[6]
+set_location_assignment PIN_D2 -to fse_a[7]
+set_location_assignment PIN_D4 -to fse_a[8]
+set_location_assignment PIN_D1 -to fse_a[9]
+set_location_assignment PIN_C6 -to fse_d[0]
+set_location_assignment PIN_F8 -to fse_d[10]
+set_location_assignment PIN_E8 -to fse_d[11]
+set_location_assignment PIN_B8 -to fse_d[12]
+set_location_assignment PIN_A8 -to fse_d[13]
+set_location_assignment PIN_D8 -to fse_d[14]
+set_location_assignment PIN_C8 -to fse_d[15]
+set_location_assignment PIN_B9 -to fse_d[16]
+set_location_assignment PIN_A9 -to fse_d[17]
+set_location_assignment PIN_D9 -to fse_d[18]
+set_location_assignment PIN_C9 -to fse_d[19]
+set_location_assignment PIN_E6 -to fse_d[1]
+set_location_assignment PIN_E9 -to fse_d[20]
+set_location_assignment PIN_E10 -to fse_d[21]
+set_location_assignment PIN_B10 -to fse_d[22]
+set_location_assignment PIN_A10 -to fse_d[23]
+set_location_assignment PIN_F10 -to fse_d[24]
+set_location_assignment PIN_C10 -to fse_d[25]
+set_location_assignment PIN_D10 -to fse_d[26]
+set_location_assignment PIN_C11 -to fse_d[27]
+set_location_assignment PIN_D11 -to fse_d[28]
+set_location_assignment PIN_B11 -to fse_d[29]
+set_location_assignment PIN_B6 -to fse_d[2]
+set_location_assignment PIN_A11 -to fse_d[30]
+set_location_assignment PIN_E11 -to fse_d[31]
+set_location_assignment PIN_A6 -to fse_d[3]
+set_location_assignment PIN_F7 -to fse_d[4]
+set_location_assignment PIN_E7 -to fse_d[5]
+set_location_assignment PIN_B7 -to fse_d[6]
+set_location_assignment PIN_A7 -to fse_d[7]
+set_location_assignment PIN_D7 -to fse_d[8]
+set_location_assignment PIN_C7 -to fse_d[9]
+
+# The board labels these 0 .. 7, but I like the
+# lower order bit on the left, thank you!
+set_location_assignment PIN_E14 -to led[7]
+set_location_assignment PIN_E13 -to led[6]
+set_location_assignment PIN_C14 -to led[5]
+set_location_assignment PIN_D14 -to led[4]
+set_location_assignment PIN_E12 -to led[3]
+set_location_assignment PIN_F12 -to led[2]
+set_location_assignment PIN_B3 -to led[1]
+set_location_assignment PIN_B14 -to led[0]
+
+set_location_assignment PIN_G15 -to p1_a21
+set_location_assignment PIN_H15 -to p1_a28
+set_location_assignment PIN_G18 -to p1_a29
+set_location_assignment PIN_U18 -to p1_a38
+set_location_assignment PIN_P27 -to p1_clkout
+set_location_assignment PIN_L14 -to pld_clkfb
+set_location_assignment PIN_L8 -to pld_clkout
+set_location_assignment PIN_K6 -to proto1_clkout
+set_location_assignment PIN_K14 -to proto2_clkout
+set_location_assignment PIN_Y10 -to ps2_kclk
+set_location_assignment PIN_V10 -to ps2_kdata
+set_location_assignment PIN_T10 -to ps2_mclk
+set_location_assignment PIN_Y9 -to ps2_mdata
+set_location_assignment PIN_W10 -to ps2_sel
+set_location_assignment PIN_C4 -to reset_n
+set_location_assignment PIN_U6 -to s7_0[0]
+set_location_assignment PIN_V6 -to s7_0[1]
+set_location_assignment PIN_W7 -to s7_0[2]
+set_location_assignment PIN_Y7 -to s7_0[3]
+set_location_assignment PIN_R7 -to s7_0[4]
+set_location_assignment PIN_T8 -to s7_0[5]
+set_location_assignment PIN_V7 -to s7_0[6]
+set_location_assignment PIN_U7 -to s7_0[7]
+set_location_assignment PIN_T5 -to s7_1[0]
+set_location_assignment PIN_U5 -to s7_1[1]
+set_location_assignment PIN_V5 -to s7_1[2]
+set_location_assignment PIN_W5 -to s7_1[3]
+set_location_assignment PIN_T6 -to s7_1[4]
+set_location_assignment PIN_T7 -to s7_1[5]
+set_location_assignment PIN_W6 -to s7_1[6]
+set_location_assignment PIN_Y6 -to s7_1[7]
+set_location_assignment PIN_M2 -to sd_a[0]
+set_location_assignment PIN_H6 -to sd_a[10]
+set_location_assignment PIN_H5 -to sd_a[11]
+set_location_assignment PIN_M1 -to sd_a[1]
+set_location_assignment PIN_M6 -to sd_a[2]
+set_location_assignment PIN_M4 -to sd_a[3]
+set_location_assignment PIN_J8 -to sd_a[4]
+set_location_assignment PIN_J7 -to sd_a[5]
+set_location_assignment PIN_J6 -to sd_a[6]
+set_location_assignment PIN_J5 -to sd_a[7]
+set_location_assignment PIN_J4 -to sd_a[8]
+set_location_assignment PIN_J3 -to sd_a[9]
+set_location_assignment PIN_H7 -to sd_ba[0]
+set_location_assignment PIN_H1 -to sd_ba[1]
+set_location_assignment PIN_G3 -to sd_cas_n
+set_location_assignment PIN_G7 -to sd_cke
+set_location_assignment PIN_L13 -to sd_clk
+set_location_assignment PIN_G6 -to sd_cs_n
+set_location_assignment PIN_M5 -to sd_dq[0]
+set_location_assignment PIN_P7 -to sd_dq[10]
+set_location_assignment PIN_P2 -to sd_dq[11]
+set_location_assignment PIN_P1 -to sd_dq[12]
+set_location_assignment PIN_P6 -to sd_dq[13]
+set_location_assignment PIN_P5 -to sd_dq[14]
+set_location_assignment PIN_P3 -to sd_dq[15]
+set_location_assignment PIN_P4 -to sd_dq[16]
+set_location_assignment PIN_R1 -to sd_dq[17]
+set_location_assignment PIN_R2 -to sd_dq[18]
+set_location_assignment PIN_R6 -to sd_dq[19]
+set_location_assignment PIN_M3 -to sd_dq[1]
+set_location_assignment PIN_R5 -to sd_dq[20]
+set_location_assignment PIN_R3 -to sd_dq[21]
+set_location_assignment PIN_R4 -to sd_dq[22]
+set_location_assignment PIN_T4 -to sd_dq[23]
+set_location_assignment PIN_T2 -to sd_dq[24]
+set_location_assignment PIN_T3 -to sd_dq[25]
+set_location_assignment PIN_U1 -to sd_dq[26]
+set_location_assignment PIN_U4 -to sd_dq[27]
+set_location_assignment PIN_U2 -to sd_dq[28]
+set_location_assignment PIN_U3 -to sd_dq[29]
+set_location_assignment PIN_M7 -to sd_dq[2]
+set_location_assignment PIN_V3 -to sd_dq[30]
+set_location_assignment PIN_V2 -to sd_dq[31]
+set_location_assignment PIN_N6 -to sd_dq[3]
+set_location_assignment PIN_N1 -to sd_dq[4]
+set_location_assignment PIN_N2 -to sd_dq[5]
+set_location_assignment PIN_N4 -to sd_dq[6]
+set_location_assignment PIN_N3 -to sd_dq[7]
+set_location_assignment PIN_N5 -to sd_dq[8]
+set_location_assignment PIN_N7 -to sd_dq[9]
+set_location_assignment PIN_J2 -to sd_dqm[0]
+set_location_assignment PIN_J1 -to sd_dqm[1]
+set_location_assignment PIN_H4 -to sd_dqm[2]
+set_location_assignment PIN_H3 -to sd_dqm[3]
+set_location_assignment PIN_H2 -to sd_ras_n
+set_location_assignment PIN_G4 -to sd_we_n
+set_location_assignment PIN_V17 -to sram_be_n[0]
+set_location_assignment PIN_V16 -to sram_be_n[1]
+set_location_assignment PIN_W16 -to sram_be_n[2]
+set_location_assignment PIN_T16 -to sram_be_n[3]
+set_location_assignment PIN_W17 -to sram_cs_n
+set_location_assignment PIN_Y17 -to sram_oe_n
+set_location_assignment PIN_U16 -to sram_we_n
+set_location_assignment PIN_W3 -to sw[0]
+set_location_assignment PIN_Y4 -to sw[1]
+set_location_assignment PIN_V4 -to sw[2]
+set_location_assignment PIN_W4 -to sw[3]
+set_location_assignment PIN_J13 -to ttya_cts
+set_location_assignment PIN_M16 -to ttya_dcd
+set_location_assignment PIN_M20 -to ttya_dsr
+set_location_assignment PIN_M15 -to ttya_dtr
+set_location_assignment PIN_M19 -to ttya_ri
+set_location_assignment PIN_K19 -to ttya_rts
+set_location_assignment PIN_K16 -to ttya_rxd
+set_location_assignment PIN_M14 -to ttya_txd
+set_location_assignment PIN_C13 -to ttyb_rxd
+set_location_assignment PIN_A13 -to ttyb_txd
+set_location_assignment PIN_T12 -to vga_b[0]
+set_location_assignment PIN_T11 -to vga_b[1]
+set_location_assignment PIN_W12 -to vga_b[2]
+set_location_assignment PIN_W8 -to vga_b[3]
+set_location_assignment PIN_Y12 -to vga_b[4]
+set_location_assignment PIN_Y8 -to vga_b[5]
+set_location_assignment PIN_V9 -to vga_b[6]
+set_location_assignment PIN_U9 -to vga_b[7]
+set_location_assignment PIN_R14 -to vga_blank_n
+set_location_assignment PIN_T15 -to vga_g[0]
+set_location_assignment PIN_W15 -to vga_g[1]
+set_location_assignment PIN_Y15 -to vga_g[2]
+set_location_assignment PIN_U15 -to vga_g[3]
+set_location_assignment PIN_V15 -to vga_g[4]
+set_location_assignment PIN_V14 -to vga_g[5]
+set_location_assignment PIN_U14 -to vga_g[6]
+set_location_assignment PIN_Y14 -to vga_g[7]
+set_location_assignment PIN_T9 -to vga_hs
+set_location_assignment PIN_V11 -to vga_m1
+set_location_assignment PIN_U11 -to vga_m2
+set_location_assignment PIN_U12 -to vga_r[0]
+set_location_assignment PIN_V12 -to vga_r[1]
+set_location_assignment PIN_T13 -to vga_r[2]
+set_location_assignment PIN_R13 -to vga_r[3]
+set_location_assignment PIN_Y13 -to vga_r[4]
+set_location_assignment PIN_W13 -to vga_r[5]
+set_location_assignment PIN_U13 -to vga_r[6]
+set_location_assignment PIN_V13 -to vga_r[7]
+set_location_assignment PIN_T14 -to vga_sync_n
+set_location_assignment PIN_W14 -to vga_sync_t
+set_location_assignment PIN_R9 -to vga_vs
+
+
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_GATE_RETIME ON
+set_global_assignment -name CYCLONE_OPTIMIZATION_TECHNIQUE BALANCED
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name FIT_ONLY_ONE_ATTEMPT OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
+set_global_assignment -name MUX_RESTRUCTURE AUTO
+set_global_assignment -name HCPY_CAT ON
+set_global_assignment -name HCPY_VREF_PINS ON
+set_global_assignment -name HCPY_PLL_MULTIPLE_CLK_NETWORK_TYPES ON
+set_global_assignment -name ENABLE_DRC_SETTINGS ON
+set_global_assignment -name IGNORE_CLOCK_SETTINGS ON
+set_global_assignment -name FMAX_REQUIREMENT "500 MHz"
+
+set_global_assignment -name VERILOG_FILE ../pdm.v
+set_global_assignment -name VERILOG_FILE src/fpgammix.v
+set_global_assignment -name VERILOG_FILE ../core.v
+set_global_assignment -name VERILOG_FILE ../system.v
+set_global_assignment -name VERILOG_FILE ../interconnect.v
+set_global_assignment -name VERILOG_FILE ../memory_interface.v
+set_global_assignment -name VERILOG_FILE ../vga.v
+set_global_assignment -name VERILOG_FILE ../rs232in.v
+set_global_assignment -name VERILOG_FILE ../rs232out.v
+set_global_assignment -name VERILOG_FILE ../filter.v
+set_global_assignment -name VERILOG_FILE mega/regfile.v
+set_global_assignment -name VERILOG_FILE mega/pll1.v
+set_global_assignment -name MIF_FILE ../initmem.mif
+set_global_assignment -name MIF_FILE ../info_flags.mif
+set_global_assignment -name CDF_FILE fpgammix.cdf

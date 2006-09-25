@@ -1,0 +1,100 @@
+
+                              PLATFORMS
+                         Updated: 2006-09-18
+
+
+Besides frequent simulations with Icarus Verilog, FpgaMMIX has been
+developed on and currently only support this (slightly old) FPGA
+development kit:
+
+    Altera's Nios Dev Kit, Cyclone Edition + Lancelot ($1200)
+
+    FPGA:   Cyclone EP1C20 (20,060 LUT4)
+    Memory: 16 MiB SDRAM (32x), 1 MiB SRAM (32x)
+    Flash:  CompactFlash, 8 MiB linear flash (8x)
+    Other:  Ethernet 100, VGA, dual PS/2, audio out, RS232
+
+        Decent, but expensive and on the small side of FPGA and
+	memory.
+
+	I still need to support the SDRAM, CompactFlash, the linear
+	flash, and the Ethernet, but the FPGA is getting full.
+
+However it is a pricy option and has a few limitation (notably the
+amount of available main memory). Hopefully before too long, FpgaMMIX
+will be extended to support other development boards.  Here is a list
+of interesting candidates:
+
+  * Xilix's Virtex-4 ML401 Evaluation Platform ($500)
+
+    FPGA:   Virtex-4 XC4LX25 (21,504 LUT4)
+    Memory: 64 MiB(**) DDR SDRAM 266 MHz (32x), 1.125 MiB ZBT SRAM (36x)
+    Flash:  CompactFlash, 8 MiB Flash (32x)
+    Other:  Ethernet 1000, VGA, dual PS/2, USB H&P, RS232, lots of audio
+
+	Good value, small FPGA and a bit short on memory compared to
+	the ML501 below, but I happen to have this board.
+
+        (**) Documentation claims it can be reworked to 256 MiB, but AFAICT,
+        there is only one extra pin thus enabling only 128 MiB.
+
+
+  * Xilix's Virtex-5 ML501 Evaluation & Development Platform (n/a $1000)
+
+    FPGA:   Virtex-5 XC5VLX50 (28,800 LUT6 ~= 46,080 LUT4)
+    Memory: 256 MiB(***) DDR2 SODIMM (larger can be used), 1 MiB ZBT SRAM
+    Flash:  CompactFlash, 32 MiB Flash
+    Other:  Ethernet 1000, DVI, dual PS/2, USB H&P, RS232, lots of audio
+
+	Ideal, but not supported by ISE WebPACK!
+	DDR2 DIMM => faster, wider, but more complicated
+
+	(***) Supports larger SODIMMs (up to 1 GiB?)
+
+
+  * Xilinx's Spartan-3E Starter Kit ($150)
+
+    FPGA:   Spartan-3E 500E (10,476 LUT4)
+    Memory: 64 MiB DDR SDRAM
+    Flash:  16 MiB parallel flash
+    Other:  Ethernet 100, VGA, single PS/2, RS232
+
+	Great value, but FPGA is too small. No audio. No flash
+	card. VGA wimpy (8 colors)
+
+	FpgaMMIX is obviously highly un-optimized currently, but just
+	the core is 14,000+ LUT4, unlikely to be shrunk to 50%.
+
+
+  * Xilinx's Spartan-3E 1600E MicroBlaze Dev Kit (n/a $600)
+
+    FPGA:   Spartan-3E 1600E (33,192 LUT4)
+    The rest as the Spartan-3E Starter Kit above.
+
+	FPGA plenty big.  Rest as with the Spartan-3E Starter Kit.
+	The FPGA 50% bigger than the ML401, but the latter have more
+	peripherals.
+
+
+
+Runner up:
+
+  * Altera's DSP Development Kit, Cyclone-II Edition ($1000)
+
+    FPGA:   Cyclone-II EP2C70 (68,416 LUT4)
+    Memory: 256 MiB DDR2 SODIMM, 1 MiB synchronous SRAM
+    Flash:  none?
+    Other:  VGA, audio
+
+	FPGA and memory is great, but almost everything else is
+        missing.
+
+
+  * Altera's DE2 Development & Education Board ($500, $270 students)
+
+    FPGA:   Cyclone-II EP2C35 (33,215 LUT4)
+    Memory: 8 MiB SDRAM, 512 KiB SRAM
+    Flash:  SD memory card, 4 MiB Flash
+    Other:  Ethernet 100, VGA, single PS/2, Audio, Video in, USB H&P
+
+	*Way* too little main memory
