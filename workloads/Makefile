@@ -13,7 +13,8 @@ LDOPTS=
 #LDOPTS=-Ttext=80000000
 T=1
 
-%.run: %.txt $(FPGAMMIX_DIR)/rtl/Icarus/initmem.data
+%.run-fpgammix-sim: %.txt # $(FPGAMMIX_DIR)/rtl/Icarus/initmem.data
+	$(MAKE) -C $(FPGAMMIX_DIR)/workloads/tinymon
 	cp $< $(FPGAMMIX_DIR)/rtl/Icarus/input.txt
 	$(MAKE) -C $(FPGAMMIX_DIR)/rtl/Icarus;
 

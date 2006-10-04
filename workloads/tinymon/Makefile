@@ -1,6 +1,8 @@
-target: ../../rtl/initmem.mif ../../rtl/Icarus/initmem.data
+target: install
 
 include ../Makefile
+
+install: ../../rtl/initmem.mif ../../rtl/Icarus/initmem.data
 
 tinymon.elf: start.o tinymon.o
 	/opt/mmix/bin/mmix-ld -Ttext=80000000 -m elf64mmix $^ -o $@
