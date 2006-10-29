@@ -28,7 +28,7 @@ set_global_assignment -name DEVICE EP1C20F400C7
 set_global_assignment -name TOP_LEVEL_ENTITY fpgammix
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:55:16  MAY 16, 2006"
-set_global_assignment -name LAST_QUARTUS_VERSION 6.0
+set_global_assignment -name LAST_QUARTUS_VERSION "6.0 SP1"
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name FITTER_EFFORT "FAST FIT"
 
