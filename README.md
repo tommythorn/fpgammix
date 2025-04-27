@@ -58,6 +58,6 @@ even bigger issues for a superscalar or out-of-order execution
 implementation.
 
 At the end of the day, the value of a processor is the amount of
-computation for the given resources and an the MMIX ISA includes a lot
+computation for the given resources and the MMIX ISA includes a lot
 of complexity that doesn't contribute significantly to the performance
 of average programs.
