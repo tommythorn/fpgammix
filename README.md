@@ -8,8 +8,8 @@ graphics demos.
 
 The motivation behind this was to evaluate MMIX as a softcore.  My
 preliminary conclusion is that it's not ideal and my effort is better
-directed at other targets, such as
-[YARVI (RISC-V)](https://github.com/tommythorn/yari).
+directed at other targets, such as RISC-V.  I made simple pipelined
+32-bit RISC-V softcore [YARVI](https://github.com/tommythorn/yari).
 
 The implementation is left here for posterity, but there are bits and
 pieces that may be useful.
@@ -57,7 +57,16 @@ Finally, all the problems complicating a pipelined design, becomes
 even bigger issues for a superscalar or out-of-order execution
 implementation.
 
-At the end of the day, the value of a processor is the amount of
-computation for the given resources and the MMIX ISA includes a lot
-of complexity that doesn't contribute significantly to the performance
-of average programs.
+A related and possibly even more serious issue: the ISA appears a
+challenging code generation target -- GCC has now dropped support
+for MMIX, but the version that did support it reveal a surprising
+amount of overhead that isn't apparent in hand-written examples.
+
+## Conclusion
+At the end of the day, the value of a processor comes from the
+software it executes.  Once we have that, we care about
+performance, which ends up being a question of efficiency;
+how efficiently we can turn power, area, design-time, etc into
+faster execution.  This exercise concluded that the MMIX ISA
+includes a lot of complexity that doesn't contribute significantly
+to the performance of common programs.
